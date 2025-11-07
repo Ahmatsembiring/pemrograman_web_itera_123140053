@@ -61,26 +61,26 @@ Sebuah aplikasi web interaktif untuk mengelola jadwal kuliah, daftar tugas, dan 
 \`\`\`javascript
 // Task Class - Mengelola data tugas
 class Task {
-    constructor(id, title, deadline, priority, subject, completed)
-    // Properties dan methods
+constructor(id, title, deadline, priority, subject, completed)
+// Properties dan methods
 }
 
 // Note Class - Mengelola data catatan
 class Note {
-    constructor(id, title, content, category)
-    // Properties dan methods
+constructor(id, title, content, category)
+// Properties dan methods
 }
 
 // Schedule Class - Mengelola jadwal
 class Schedule {
-    constructor(id, name, time, location, instructor)
-    // Properties dan methods
+constructor(id, name, time, location, instructor)
+// Properties dan methods
 }
 
 // Main Application Class
 class DashboardApp {
-    constructor()
-    // Semua methods untuk mengelola aplikasi
+constructor()
+// Semua methods untuk mengelola aplikasi
 }
 \`\`\`
 
@@ -105,10 +105,10 @@ class DashboardApp {
 \`\`\`javascript
 // Render schedules dengan template literals
 scheduleList.innerHTML = this.schedules
-    .map(
-        (schedule) => `        <div class="card">             <div class="card-header">                 <h3 class="card-title">${schedule.name}</h3>             </div>             <div class="card-meta">                 <div class="card-meta-item">⏰ ${schedule.time}</div>                 <div class="card-meta-item">📍 ${schedule.location}</div>             </div>             <!-- ... -->         </div>    `
-    )
-    .join('');
+.map(
+(schedule) => `    <div class="card">             <div class="card-header">                 <h3 class="card-title">${schedule.name}</h3>             </div>             <div class="card-meta">                 <div class="card-meta-item">⏰ ${schedule.time}</div>                 <div class="card-meta-item">📍 ${schedule.location}</div>             </div>             <!-- ... -->         </div>`
+)
+.join('');
 \`\`\`
 
 Digunakan di:
@@ -123,12 +123,12 @@ Digunakan di:
 \`\`\`javascript
 // Async function dengan Promise
 loadInitialData = async () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            // Add sample data
-            resolve();
-        }, 300);
-    });
+return new Promise((resolve) => {
+setTimeout(() => {
+// Add sample data
+resolve();
+}, 300);
+});
 };
 \`\`\`
 
@@ -159,17 +159,15 @@ loadInitialData = async () => {
 
 ### 1. Setup
 
-\`\`\`bash
-
-# Clone atau download files
-
-# Pastikan Anda memiliki: index.html, styles.css, app.js
-
-# Buka file index.html di browser
-
-# atau gunakan Live Server extension di VSCode
-
 \`\`\`
+
+https://github.com/Ahmatsembiring/pemrograman_web_itera_123140053.git
+
+cd Ahmat Prayoga Sembiring_123140053_Pertemuan2
+
+live server
+
+\`\``
 
 ### 2. Menambah Jadwal
 
@@ -220,10 +218,10 @@ loadInitialData = async () => {
 
 \`\`\`
 personal-dashboard/
-├── index.html          # File HTML utama dengan struktur markup
-├── styles.css          # Stylesheet dengan desain modern
-├── app.js             # JavaScript dengan ES6+ features
-└── README.md          # Dokumentasi ini
+├── index.html # File HTML utama dengan struktur markup
+├── styles.css # Stylesheet dengan desain modern
+├── app.js #JavaScript dengan ES6+ features
+└── README.md # Dokumentasi ini
 \`\`\`
 
 ### File Descriptions
@@ -299,114 +297,9 @@ personal-dashboard/
 - Color-coded priority/category badges
 - Empty states dengan helpful messages
 
----
-
-## 📊 Features Breakdown
-
-### Interaktivitas (30%)
-
-✅ CRUD operations untuk 3 section (Schedule, Task, Notes)
-✅ Real-time tab switching
-✅ Checkbox untuk task completion
-✅ Form validation
-✅ Live statistics update
-
-### ES6+ Implementation (25%)
-
-✅ 4 Custom Classes
-✅ 15+ Arrow Functions
-✅ Template Literals di semua rendering
-✅ Async/Await dengan Promise
-✅ let/const untuk declarations
-✅ Array methods modern
-
-### localStorage & Data Management (20%)
-
-✅ Persist data to localStorage
-✅ Load data on page refresh
-✅ JSON serialization/deserialization
-✅ Proper data structure dengan classes
-✅ Backup/restore functionality
-
-### Design UI/UX (15%)
-
-✅ Modern card-based layout
-✅ Smooth animations
-✅ Responsive design (mobile, tablet, desktop)
-✅ Color-coded priorities/categories
-✅ Empty states
-✅ Progress visualization
-
-### Documentation & Code Quality (10%)
-
-✅ Clear comments dengan `<!-- CHANGE -->` markers
-✅ Consistent naming conventions
-✅ Modular function structure
-✅ Error handling
-✅ README.md documentation
-
----
-
-## 🔧 Debugging & Development
-
-### Check Browser Console
-
-\`\`\`javascript
-// Lihat data yang tersimpan
-console.log(app.tasks);
-console.log(app.notes);
-console.log(app.schedules);
-\`\`\`
-
-### Check localStorage
-
-\`\`\`javascript
-// Di browser console
-localStorage.getItem('dashboard_tasks')
-localStorage.getItem('dashboard_notes')
-localStorage.getItem('dashboard_schedules')
-
-// Clear data jika diperlukan
-localStorage.clear()
-\`\`\`
-
-### Add Sample Data
-
-Aplikasi otomatis menambahkan 3 sample items ketika pertama kali dibuka.
-
----
-
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - **Desktop** (1024px+) - Full grid layout
 - **Tablet** (768px - 1023px) - 2-column grid
 - **Mobile** (480px - 767px) - 1-column grid
-- **Small Mobile** (<480px) - Optimized touch targets
-
----
-
-## ✨ Future Enhancements
-
-- Edit functionality untuk existing items
-- Search dan filter capabilities
-- Export data ke CSV/JSON
-- Dark mode toggle
-- Notifications dan reminders
-- Categories/tags for better organization
-- Recurring tasks
-- Calendar view untuk jadwal
-- Mobile app version
-
----
-
-## 📝 License
-
-Personal Project untuk Educational Purpose
-
-## 👨‍💻 Author
-
-Created with ES6+ and modern web development practices
-
----
-
-**Terima kasih telah menggunakan Personal Dashboard!** 🚀
+- **Small Mobile** (<480px) - Optimized touch ta

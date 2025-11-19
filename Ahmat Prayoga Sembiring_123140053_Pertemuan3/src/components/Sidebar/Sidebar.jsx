@@ -9,21 +9,15 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <nav className="nav-menu">
-        <Link 
-          to="/" 
-          className={`nav-item ${isActive('/') ? 'active' : ''}`}
-        >
-          <span className="nav-icon">📚</span>
-          <span className="nav-text">Buku Saya</span>
+        <Link to="/" className={`nav-item ${isActive('/') ? 'active' : ''}`}>
+          <img src="/image.png" alt="Buku" className="nav-icon" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
         </Link>
-        <Link 
-          to="/stats" 
-          className={`nav-item ${isActive('/stats') ? 'active' : ''}`}
-        >
-          <span className="nav-icon">📊</span>
+
+        <Link to="/stats" className={`nav-item ${isActive('/stats') ? 'active' : ''}`}>
+          <img src="/statistik.png" alt="Statistik" className="nav-icon"style={{width: '80px',objectFit:'contain'}} />
           <span className="nav-text">Statistik</span>
         </Link>
       </nav>
     </aside>
-  )
+  );
 }

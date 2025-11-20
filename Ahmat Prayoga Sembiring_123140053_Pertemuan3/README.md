@@ -170,10 +170,6 @@ npm run build
 
 Output akan berada di folder `dist/`
 
-## Lisensi
-
-MIT
-
-## Dibuat dengan ❤️
+## Dibuat dengan 
 
 Aplikasi ini dibuat menggunakan React, Vite, dan CSS Vanilla.

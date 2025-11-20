@@ -1,10 +1,10 @@
-import { Link, useLocation } from 'react-router-dom'
-import './Sidebar.css'
+import { Link, useLocation } from 'react-router-dom';
+import './Sidebar.css';
 
 export default function Sidebar() {
-  const location = useLocation()
+  const location = useLocation();
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path) => location.pathname === path;
 
   return (
     <aside className="sidebar">
@@ -15,7 +15,7 @@ export default function Sidebar() {
         </Link>
 
         <Link to="/stats" className={`nav-item ${isActive('/stats') ? 'active' : ''}`}>
-          <img src="/statistik.png" alt="Statistik" className="nav-icon"style={{width: '80px',objectFit:'contain'}} />
+          <img src="/statistik.png" alt="Statistik" className="nav-icon" style={{ width: '80px', objectFit: 'contain' }} />
           <span className="nav-text">Statistik</span>
         </Link>
       </nav>

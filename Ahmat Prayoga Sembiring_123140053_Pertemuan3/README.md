@@ -1,5 +1,7 @@
 # Aplikasi Manajemen Buku Pribadi
 
+![1763641009264](image/README/1763641009264.png)
+
 Aplikasi modern untuk mengelola koleksi buku pribadi Anda dengan antarmuka yang intuitif dan responsif.
 
 ## Fitur Utama
@@ -10,6 +12,8 @@ Aplikasi modern untuk mengelola koleksi buku pribadi Anda dengan antarmuka yang 
 - **Filter & Cari**: Filter buku berdasarkan status dan cari berdasarkan judul/penulis
 - **Statistik**: Lihat statistik lengkap koleksi buku Anda
 - **Penyimpanan Lokal**: Data tersimpan otomatis di browser Anda
+
+  ![1763641029324](image/README/1763641029324.png)
 
 ## Status Buku
 
@@ -29,17 +33,16 @@ Aplikasi modern untuk mengelola koleksi buku pribadi Anda dengan antarmuka yang 
 ## Instalasi
 
 ### Prerequisites
+
 - Node.js 16+ dan npm/yarn
 
 ### Langkah-langkah
 
 1. **Clone atau download project ini**
-
 2. **Install dependencies**
    \`\`\`bash
    npm install
    \`\`\`
-
 3. **Jalankan development server**
    \`\`\`bash
    npm run dev
@@ -50,24 +53,29 @@ Aplikasi modern untuk mengelola koleksi buku pribadi Anda dengan antarmuka yang 
 ## Penggunaan
 
 ### Menambah Buku Baru
+
 1. Di halaman Home, isi form "Tambah Buku Baru"
 2. Masukkan judul, penulis, dan pilih status
 3. Klik "Tambah Buku"
 
 ### Mengedit Buku
+
 1. Klik tombol Edit pada kartu buku
 2. Ubah informasi yang diinginkan
 3. Klik "Perbarui Buku"
 
 ### Menghapus Buku
+
 1. Klik tombol Hapus pada kartu buku
 2. Konfirmasi penghapusan
 
 ### Mencari & Filter
+
 1. Gunakan search box untuk mencari berdasarkan judul/penulis
 2. Klik tombol filter untuk memfilter berdasarkan status
 
 ### Melihat Statistik
+
 1. Klik menu "Statistik" di sidebar
 2. Lihat ringkasan dan visualisasi data koleksi Anda
 
@@ -102,6 +110,7 @@ src/
 ## Custom Hooks
 
 ### useLocalStorage
+
 Menyimpan dan retrieve data dari localStorage dengan error handling.
 
 \`\`\`jsx
@@ -109,6 +118,7 @@ const [books, setBooks] = useLocalStorage('books', [])
 \`\`\`
 
 ### useBookStats
+
 Menghitung statistik buku termasuk total dan distribusi per status.
 
 \`\`\`jsx
@@ -146,6 +156,7 @@ Jika mengalami error saat input form, pesan error akan ditampilkan di bawah fiel
 ## Fitur Dokumentasi
 
 Setiap file mendapat:
+
 - Comments untuk bagian penting
 - JSDoc untuk functions dan hooks
 - README yang komprehensif
@@ -164,4 +175,5 @@ Output akan berada di folder `dist/`
 MIT
 
 ## Dibuat dengan ❤️
+
 Aplikasi ini dibuat menggunakan React, Vite, dan CSS Vanilla.

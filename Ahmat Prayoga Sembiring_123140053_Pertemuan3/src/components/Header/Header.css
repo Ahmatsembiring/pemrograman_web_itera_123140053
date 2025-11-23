@@ -1,0 +1,40 @@
+.header {
+  background: linear-gradient(135deg, #1a1f3a 0%, #0f1419 100%);
+  border-bottom: 1px solid #2a3f5f;
+  padding: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header-brand h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e0e7ff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.header-brand p {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem 0;
+  }
+
+  .header-brand h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-brand p {
+    font-size: 0.85rem;
+  }
+}

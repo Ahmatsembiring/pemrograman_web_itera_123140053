@@ -1,0 +1,40 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.add-book-section,
+.books-section {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e0e7ff;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #2a3f5f;
+  padding-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard - Manajemen Produktivitas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="header-title">Dashboard Saya</h1>
+                    <p class="header-subtitle">Kelola jadwal, tugas, dan catatan Anda</p>
+                </div>
+                <div class="header-right">
+                    <div class="clock-widget">
+                        <p id="current-time" class="current-time">00:00:00</p>
+                        <p id="current-date" class="current-date">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="schedule">📅 Jadwal</button>
+            <button class="nav-tab" data-tab="tasks">✓ Tugas</button>
+            <button class="nav-tab" data-tab="notes">📝 Catatan</button>
+            <button class="nav-tab" data-tab="stats">📊 Statistik</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Schedule Section -->
+            <section id="schedule" class="tab-content active">
+                <div class="section-header">
+                    <h2>Jadwal Kuliah</h2>
+                    <p class="section-description">Kelola jadwal kelas dan acara penting Anda</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="schedule-form" class="form">
+                        <div class="form-row">
+                            <input type="text" id="schedule-name" placeholder="Nama Kelas" required>
+                            <input type="time" id="schedule-time" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="schedule-location" placeholder="Ruangan/Lokasi">
+                            <input type="text" id="schedule-instructor" placeholder="Dosen">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah Jadwal</button>
+                    </form>
+                </div>
+
+                <div id="schedule-list" class="items-grid">
+                    <!-- Jadwal akan ditampilkan di sini -->
+                </div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section id="tasks" class="tab-content">
+                <div class="section-header">
+                    <h2>Daftar Tugas</h2>
+                    <p class="section-description">Kelola dan pantau penyelesaian tugas Anda</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="task-form" class="form">
+                        <div class="form-row">
+                            <input type="text" id="task-title" placeholder="Judul Tugas" required>
+                            <input type="date" id="task-deadline" required>
+                        </div>
+                        <div class="form-row">
+                            <select id="task-priority">
+                                <option value="low">Prioritas Rendah</option>
+                                <option value="medium" selected>Prioritas Sedang</option>
+                                <option value="high">Prioritas Tinggi</option>
+                            </select>
+                            <input type="text" id="task-subject" placeholder="Mata Kuliah (opsional)">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah Tugas</button>
+                    </form>
+                </div>
+
+                <div id="task-list" class="items-grid">
+                    <!-- Tugas akan ditampilkan di sini -->
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section id="notes" class="tab-content">
+                <div class="section-header">
+                    <h2>Catatan</h2>
+                    <p class="section-description">Simpan catatan dan ide-ide penting Anda</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="note-form" class="form">
+                        <input type="text" id="note-title" placeholder="Judul Catatan" required>
+                        <textarea id="note-content" placeholder="Tulis catatan Anda di sini..." rows="4" required></textarea>
+                        <div class="form-row">
+                            <select id="note-category">
+                                <option value="personal">Personal</option>
+                                <option value="academic">Akademik</option>
+                                <option value="project">Proyek</option>
+                                <option value="idea">Ide</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary">Simpan Catatan</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="note-list" class="items-grid">
+                    <!-- Catatan akan ditampilkan di sini -->
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section id="stats" class="tab-content">
+                <div class="section-header">
+                    <h2>Statistik & Ringkasan</h2>
+                    <p class="section-description">Lihat ringkasan produktivitas Anda</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Jadwal</h3>
+                        <p id="stat-schedules" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Tugas</h3>
+                        <p id="stat-tasks" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tugas Selesai</h3>
+                        <p id="stat-completed" class="stat-number">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Catatan</h3>
+                        <p id="stat-notes" class="stat-number">0</p>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <h3>Progress Tugas</h3>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text" class="progress-text">0/0 tugas selesai</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Dashboard Produktivitas • Data disimpan secara lokal di browser Anda</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

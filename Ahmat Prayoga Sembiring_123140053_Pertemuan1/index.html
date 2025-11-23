@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Tugas Akademik </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📚 Manajemen Tugas Akademik Ahmat</h1>
+                <p class="subtitle">Kelola aktivitas akademik Anda dengan mudah</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar Stats -->
+            <aside class="sidebar">
+                <div class="stats-card">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Tugas</span>
+                        <span class="stat-value" id="totalTasks">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Belum Selesai</span>
+                        <span class="stat-value pending" id="pendingTasks">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Selesai</span>
+                        <span class="stat-value completed" id="completedTasks">0</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="content">
+                <!-- Form Section -->
+                <div class="form-section">
+                    <h2>Tambah Tugas Baru</h2>
+                    <form id="taskForm" class="task-form">
+                        <div class="form-group">
+                            <label for="taskName">Nama Tugas *</label>
+                            <input 
+                                type="text" 
+                                id="taskName" 
+                                placeholder="Contoh: Buat laporan penelitian"
+                                required
+                            >
+                            <span class="error-message" id="taskNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="courseName">Mata Kuliah *</label>
+                            <input 
+                                type="text" 
+                                id="courseName" 
+                                placeholder="Contoh: Pemrograman Web"
+                                required
+                            >
+                            <span class="error-message" id="courseNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deadline">Deadline *</label>
+                            <input 
+                                type="datetime-local" 
+                                id="deadline"
+                                required
+                            >
+                            <span class="error-message" id="deadlineError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span>➕ Tambah Tugas</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <h2>Filter & Pencarian</h2>
+                    <div class="filter-controls">
+                        <div class="search-box">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                placeholder="🔍 Cari tugas..."
+                            >
+                        </div>
+
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">
+                                Semua
+                            </button>
+                            <button class="filter-btn" data-filter="pending">
+                                Belum Selesai
+                            </button>
+                            <button class="filter-btn" data-filter="completed">
+                                Selesai
+                            </button>
+                        </div>
+
+                        <div class="course-filter">
+                            <select id="courseFilter">
+                                <option value="">Semua Mata Kuliah</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasks List Section -->
+                <div class="tasks-section">
+                    <h2>Daftar Tugas</h2>
+                    <div id="tasksList" class="tasks-list">
+                        <div class="empty-state">
+                            <p>📭 Belum ada tugas. Mulai dengan menambahkan tugas baru!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal Edit -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Edit Tugas</h3>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <form id="editForm" class="task-form">
+                    <div class="form-group">
+                        <label for="editTaskName">Nama Tugas *</label>
+                        <input 
+                            type="text" 
+                            id="editTaskName" 
+                            required
+                        >
+                        <span class="error-message" id="editTaskNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editCourseName">Mata Kuliah *</label>
+                        <input 
+                            type="text" 
+                            id="editCourseName" 
+                            required
+                        >
+                        <span class="error-message" id="editCourseNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editDeadline">Deadline *</label>
+                        <input 
+                            type="datetime-local" 
+                            id="editDeadline"
+                            required
+                        >
+                        <span class="error-message" id="editDeadlineError"></span>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        <button type="button" class="btn btn-secondary" id="cancelEdit">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

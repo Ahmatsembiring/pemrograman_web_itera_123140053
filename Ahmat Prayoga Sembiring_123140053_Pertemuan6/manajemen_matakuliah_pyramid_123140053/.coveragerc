@@ -1,0 +1,3 @@
+[run]
+source = manajemen_matakuliah_pyramid_123140053
+omit = manajemen_matakuliah_pyramid_123140053/test*
